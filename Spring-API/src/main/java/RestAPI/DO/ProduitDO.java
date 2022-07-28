@@ -14,14 +14,17 @@ public class ProduitDO {
     private String description;
     private double prix;
 
+    private String image;
+
     public ProduitDO() {
     }
 
-    public ProduitDO(Long id, String nom, String description, double prix) {
-        Id = id;
+    public ProduitDO(String reference, String nom, String description, double prix, String image) {
+        this.reference = reference;
         this.nom = nom;
         this.description = description;
         this.prix = prix;
+        this.image = image;
     }
 
     public Long getId() {
@@ -50,6 +53,14 @@ public class ProduitDO {
 
     public String getDescription() {
         return description;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public void setDescription(String description) {
