@@ -22,6 +22,9 @@ const NavbarAdmin = ()=>{
                 <li className="nav-item">
                   <Link className="nav-link" to="/admin/produits/add">Ajouter un produit</Link>
                 </li>
+                <li className="nav-item">
+                                  <Link className="nav-link" to="/admin/produits">Voir les produits</Link>
+                                </li>
 
 
               </ul>

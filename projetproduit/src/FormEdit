@@ -1,0 +1,11 @@
+import React from 'react'
+
+const FormEdit = () =>{
+    return (
+        <>
+            <h1>Formulaire d'édition</h1>
+        </>
+    )
+}
+
+export default FormEdit;
