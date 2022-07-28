@@ -16,14 +16,17 @@ public class ProduitDO {
 
     private String image;
 
+    private ClasseEnergetique note;
+
     public ProduitDO() {
     }
 
-    public ProduitDO(String reference, String nom, String description, double prix, String image) {
+    public ProduitDO(String reference, String nom, String description, double prix,ClasseEnergetique note ,String image) {
         this.reference = reference;
         this.nom = nom;
         this.description = description;
         this.prix = prix;
+        this.note = note;
         this.image = image;
     }
 
@@ -73,5 +76,13 @@ public class ProduitDO {
 
     public void setPrix(double prix) {
         this.prix = prix;
+    }
+
+    public ClasseEnergetique getNote() {
+        return note;
+    }
+
+    public void setNote(ClasseEnergetique note) {
+        this.note = note;
     }
 }
