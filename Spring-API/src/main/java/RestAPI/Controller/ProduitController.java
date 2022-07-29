@@ -19,6 +19,7 @@ public class ProduitController {
             return produitRepository.findAll();
         }else{
             System.err.println("Voici la liste des produits");
+            System.err.println("keyword:"+search);
             return produitRepository.searchProduit(search);
         }
     }
