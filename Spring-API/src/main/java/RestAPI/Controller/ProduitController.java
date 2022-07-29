@@ -31,13 +31,14 @@ public class ProduitController {
         return produit;
     }
 
-    @PutMapping("/admin/produits/")
+    @PutMapping("/admin/produits")
     public void updateProduit(@RequestBody ProduitDO produit){
+        System.err.println("hello");
         produitRepository.save(produit);
         System.err.println("Le produit à bien été modifier");
     }
 
-    @DeleteMapping("/admin/produit/{id}")
+    @DeleteMapping("/admin/produits/{id}")
     public void deleteProduit(@PathVariable long id){
         produitRepository.deleteById(id);
         System.err.println("Le produit à bien été supprimer");
