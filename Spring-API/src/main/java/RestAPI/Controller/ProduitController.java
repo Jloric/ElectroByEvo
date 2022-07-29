@@ -13,13 +13,13 @@ public class ProduitController {
     @Autowired
     ProduitRepository produitRepository;
     @GetMapping("/produits")
-    public List<ProduitDO> getAll(@RequestParam(required = false,defaultValue = "") String keyword){
-        if(keyword =="") {
+    public List<ProduitDO> getAll(@RequestParam(required = false,defaultValue = "") String search){
+        if(search =="") {
             System.err.println("Voici la liste des produits");
             return produitRepository.findAll();
         }else{
             System.err.println("Voici la liste des produits");
-            return produitRepository.searchProduit(keyword);
+            return produitRepository.searchProduit(search);
         }
     }
     @GetMapping("/produits/{id}")
