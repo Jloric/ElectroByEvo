@@ -25,19 +25,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .hasRole("Admin")
                 .anyRequest()
                 .authenticated()
-                .and()
-                .formLogin()
-                .and()
-                .oauth2Login();
+//                .and()
+//                .formLogin()
+//                .and()
+//                .oauth2Login();
         ;
     }
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws  Exception{
         auth.inMemoryAuthentication()
-                .withUser("admin").password(passwordEncoder().encode("adminadmin")).roles("Admin");
+                .withUser("admin").password(bCryptPasswordEncoder().encode("adminadmin")).roles("Admin");
     }
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public BCryptPasswordEncoder bCryptPasswordEncoder(){
         return new BCryptPasswordEncoder();
     }
 }
