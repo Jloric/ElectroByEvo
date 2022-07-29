@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+
 const NavbarAdmin = ()=>{
 
 
@@ -28,10 +29,9 @@ const NavbarAdmin = ()=>{
 
 
               </ul>
-              <form className="d-flex" role="search">
-                <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                <button className="btn btn-outline-success" type="submit">Search</button>
-              </form>
+              <div className="d-flex" >
+                <Link className="nav-link" to="/login">Se connecter</Link>
+              </div>
             </div>
           </div>
         </nav>
