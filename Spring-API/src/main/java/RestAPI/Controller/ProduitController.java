@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/api")
 public class ProduitController {
     @Autowired
     ProduitRepository produitRepository;
-
     @GetMapping("/produits")
     public List<ProduitDO> getAll(){
         System.err.println("Voici la liste des produits");
