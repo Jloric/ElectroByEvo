@@ -1,0 +1,19 @@
+
+.contact:link {
+  text-decoration: none;
+}
+
+.contact:visited {
+  text-decoration: none;
+}
+
+.contact ul{
+    list-style :none;
+}
+body{
+    height : 100vh;
+}
+
+.triable{
+background: url(https://cdn-icons-png.flaticon.com/512/25/25756.png?w=360) no-repeat 99%;
+}

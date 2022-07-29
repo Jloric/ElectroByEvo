@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate} from 'react-router-dom';
+
+
 const FormAdd = () =>{
 
     let host = "http://localhost:8080/api/admin/produits";
@@ -34,7 +36,7 @@ const FormAdd = () =>{
                             } )
             }else
             {
-                console.log("Champ invalide");
+
             }
 
         }

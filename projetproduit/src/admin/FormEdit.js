@@ -69,14 +69,14 @@ const FormEdit = () =>{
                             <div className="row mb-5">
                                 <div className="col-md-3">
                                     <label htmlFor="nom" className="form-label">Nom</label>
-                                    <input type="text" className="form-control mb-5" id="nom" name="nom" value={produit.nom} onChange={(event) => ChangeHandle(event)}/>
+                                    <input type="text" className="form-control mb-5" id="nom" name="nom" value={produit.nom} onChange={(event) => ChangeHandle(event)} required/>
 
                                     <label htmlFor="prix" className="form-label">Prix</label>
-                                    <input type="text" className="form-control" id="prix" name="prix" value={produit.prix} onChange={(event) => ChangeHandle(event)}/>
+                                    <input type="text" className="form-control" id="prix" name="prix" value={produit.prix} onChange={(event) => ChangeHandle(event)} required/>
                                 </div>
                                 <div className="offset-2 col-md-7   ">
                                     <label htmlFor="description" className="form-label">Description</label>
-                                    <textarea className="form-control" name="description" id="description" rows="6" value={produit.description} onChange={(event) => ChangeHandle(event)} placeholder="Saisir la description de votre produit"/>
+                                    <textarea className="form-control" name="description" id="description" rows="6" value={produit.description} onChange={(event) => ChangeHandle(event)} required placeholder="Saisir la description de votre produit"/>
                                 </div>
                             </div>
                             <div className="row">
