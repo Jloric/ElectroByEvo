@@ -13,9 +13,14 @@ public class ProduitController {
     @Autowired
     ProduitRepository produitRepository;
     @GetMapping("/produits")
-    public List<ProduitDO> getAll(){
-        System.err.println("Voici la liste des produits");
-      return  produitRepository.findAll();
+    public List<ProduitDO> getAll(@RequestParam(required = false,defaultValue = "") String keyword){
+        if(keyword =="") {
+            System.err.println("Voici la liste des produits");
+            return produitRepository.findAll();
+        }else{
+            System.err.println("Voici la liste des produits");
+            return produitRepository.searchProduit(keyword);
+        }
     }
     @GetMapping("/produits/{id}")
     public ProduitDO getById(@PathVariable long id){
@@ -43,4 +48,6 @@ public class ProduitController {
         produitRepository.deleteById(id);
         System.err.println("Le produit à bien été supprimer");
     }
+
+
 }
