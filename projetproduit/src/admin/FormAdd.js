@@ -57,7 +57,7 @@ const FormAdd = () =>{
                         <label htmlFor="prix" className="form-label">Prix</label>
                         <input type="text" className="form-control" id="prix" name="prix" value={produit.prix} onChange={(event) => ChangeHandle(event)}/>
                     </div>
-                    <div className="offset-2 col-md-7   ">
+                    <div className="offset-md-2 col-md-7   ">
                         <label htmlFor="description" className="form-label">Description</label>
                         <textarea className="form-control" name="description" id="description" rows="6" value={produit.description} onChange={(event) => ChangeHandle(event)} placeholder="Saisir la description de votre produit"/>
                     </div>
@@ -71,12 +71,12 @@ const FormAdd = () =>{
                     <div className="offset-md-2 col-md-7">
                         <label htmlFor="image" className="form-label">Image</label>
                         <input type="text" className="form-control mb-3" id="image" name="image" value={produit.image} onChange={(event) => ChangeHandle(event)}/>
-                        <img src={produit.image} class="img-thumbnail" alt="preview de l'image du produit"style={{"width" : "200px", "height" : "auto"}}/>
+                        
                     </div>
 
                 </div>
                 <div className="row mt-5">
-                    <div className="col-md-3">
+                    <div className="col-md-3 mb-5">
 
                         <select class="form-select" name="note" onChange={(event) => ChangeHandle(event)} value={produit.note}>
                           <option value="" selected>Classe énergétique</option>
@@ -89,8 +89,15 @@ const FormAdd = () =>{
                           <option value="G">G</option>
                         </select>
                     </div>
-                    <div className="offset-md-7 col-md-2">
-                        <button className="btn btn-success" onClick={() => ajoutProduit()} type="button">Ajouter</button>
+                   
+                        <div className=" offset-md-2 col-md-3">
+                            
+                            <img src={produit.image} class="float-start img-thumbnail" alt="preview de l'image du produit" style={{"width" : "200px", "height" : "auto"}}/>
+                        </div>
+                    
+                    <div className="col-2 offset-md-2">
+                    <button className="btn btn-success" onClick={() => ajoutProduit()} type="button">Ajouter</button>
+                    
                     </div>
                 </div>
             </form>

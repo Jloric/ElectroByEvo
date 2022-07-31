@@ -88,8 +88,7 @@ const FormEdit = () =>{
                                 <div className="offset-md-2 col-md-7">
                                     <label htmlFor="image" className="form-label">Image</label>
                                     <input type="text" className="form-control mb-3" id="image" name="image" value={produit.image} onChange={(event) => ChangeHandle(event)}/>
-                                    <img src={produit.image} class="img-thumbnail" alt="preview de l'image du produit"style={{"width" : "200px", "height" : "auto"}}/>
-                                </div>
+                                     </div>
 
                             </div>
                             <div className="row mt-5">
@@ -107,7 +106,11 @@ const FormEdit = () =>{
                                     </select>
                                 </div>
                                 <input type="hidden" name="id" value={produit.id} onChange={(event) => ChangeHandle(event)}/>
-                                <div className="offset-md-7 col-md-2">
+                                <div className=" offset-md-2 col-md-3">
+                            
+                                    <img src={produit.image} class="float-start img-thumbnail" alt="preview de l'image du produit" style={{"width" : "200px", "height" : "auto"}}/>
+                                </div>
+                                <div className="offset-md-2 col-md-2">
                                     <button className="btn btn-success" onClick={() => editProduit()} type="button">Editer</button>
                                 </div>
                             </div>
