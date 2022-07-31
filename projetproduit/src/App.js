@@ -6,7 +6,7 @@ import FormAdd from './admin/FormAdd'
 import FormEdit from './admin/FormEdit';
 import ListProduits from './admin/ListProduits';
 import Login from './admin/Login';
-
+import Logout from './admin/Logout';
 function App() {
 
   return (
@@ -19,6 +19,7 @@ function App() {
         <Route path="/admin/produits/add" element = {<FormAdd />}/>
         <Route path="/admin/produits/edit/:id" element = {<FormEdit />}/>
         <Route path="/login" exact element={<Login />}/>
+        <Route path="/logout" element={<Logout />}/>
       </Routes>
 
     </div>

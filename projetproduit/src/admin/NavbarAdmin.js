@@ -9,7 +9,7 @@ const NavbarAdmin = ()=>{
         <nav className="navbar navbar-expand-lg bg-light">
           <div className="container-fluid">
             <a className='navbar-brand' href='#'>
-                        <img style={{"height" : "50px", "width" : "auto"}} src={require('./electrobyevologo.jpg')} alt='logo ElectroByEvo'></img>
+                        <img style={{"height" : "50px", "width" : "auto"}} src={require('../images/electrobyevologo.jpg')} alt='logo ElectroByEvo'></img>
                        <label style={{"font-family": "cursive","color":"#0057A5" }}>ElectroByEvo</label>
                        </a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +30,7 @@ const NavbarAdmin = ()=>{
 
               </ul>
               <div className="d-flex" >
-                <Link className="nav-link btn btn-success p-2"  to="/login">Se connecter</Link>
+                <Link className="nav-link btn btn-danger p-2"  to="/logout">Se déconnecter</Link>
               </div>
             </div>
           </div>

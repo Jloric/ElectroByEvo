@@ -19,7 +19,7 @@ const FormAdd = () =>{
 
     const ajoutProduit = () =>{
             if (produit.reference !== "" && produit.nom !== "" && produit.prix!== "" && produit.description !== ""
-            && produit.image !== "" && produit.note != "") //On peut ajouter les conditions pour la classe énergétique
+            && produit.image !== "" && produit.note !== "") //On peut ajouter les conditions pour la classe énergétique
             {
                 let option = {
                                 method : 'POST',
@@ -71,6 +71,7 @@ const FormAdd = () =>{
                     <div className="offset-md-2 col-md-7">
                         <label htmlFor="image" className="form-label">Image</label>
                         <input type="text" className="form-control mb-3" id="image" name="image" value={produit.image} onChange={(event) => ChangeHandle(event)}/>
+                        <img src={produit.image} class="img-thumbnail" alt="preview de l'image du produit"style={{"width" : "200px", "height" : "auto"}}/>
                     </div>
 
                 </div>

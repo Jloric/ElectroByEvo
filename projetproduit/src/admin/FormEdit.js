@@ -88,6 +88,7 @@ const FormEdit = () =>{
                                 <div className="offset-md-2 col-md-7">
                                     <label htmlFor="image" className="form-label">Image</label>
                                     <input type="text" className="form-control mb-3" id="image" name="image" value={produit.image} onChange={(event) => ChangeHandle(event)}/>
+                                    <img src={produit.image} class="img-thumbnail" alt="preview de l'image du produit"style={{"width" : "200px", "height" : "auto"}}/>
                                 </div>
 
                             </div>

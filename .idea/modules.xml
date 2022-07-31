@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ElectroByEvo.iml" filepath="$PROJECT_DIR$/.idea/ElectroByEvo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ElectroByEvoModif.iml" filepath="$PROJECT_DIR$/.idea/ElectroByEvoModif.iml" />
     </modules>
   </component>
 </project>

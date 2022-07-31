@@ -53,9 +53,9 @@ const ListProduits = () =>{
             <table className="table table-striped text-center my-5">
                 <thead >
                     <tr>
-                        <th scope="col" className="triable"><a type="button" name="nom" onClick={(event) => ChangeTrie(event)}>Nom</a><img style={{"height" : "10px", "width" : "auto"}} src={require('./flechetrie.png')}/></th>
-                        <th scope="col" className="triable"><a type="button" name="note" onClick={(event) => ChangeTrie(event)}>DPE</a><img style={{"height" : "10px", "width" : "auto"}} src={require('./flechetrie.png')}/></th>
-                        <th scope="col" className="triable"><a type="button" name="prix" onClick={(event) => ChangeTrie(event)}>Prix</a><img style={{"height" : "10px", "width" : "auto"}} src={require('./flechetrie.png')}/></th>
+                        <th scope="col" className="triable"><a type="button" name="nom" onClick={(event) => ChangeTrie(event)}>Nom</a><img style={{"height" : "10px", "width" : "auto"}} src={require('../images/flechetrie.png')}/></th>
+                        <th scope="col" className="triable"><a type="button" name="note" onClick={(event) => ChangeTrie(event)}>DPE</a><img style={{"height" : "10px", "width" : "auto"}} src={require('../images/flechetrie.png')}/></th>
+                        <th scope="col" className="triable"><a type="button" name="prix" onClick={(event) => ChangeTrie(event)}>Prix</a><img style={{"height" : "10px", "width" : "auto"}} src={require('../images/flechetrie.png')}/></th>
                         <th scope="col">Référence</th>
                         <th scope="col">Descripition</th>
                         <th scope="col">Modifier</th>
