@@ -1,32 +1,29 @@
 package RestAPI.Controller;
 
 import RestAPI.DAO.UserRepository;
-import RestAPI.DO.User;
+import RestAPI.DO.UserModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("api/auth")
+@RequestMapping("/api/auth")
 public class UserController {
     @Autowired
     UserRepository userRepository;
-
-    @GetMapping("/login")
-    public User login(@RequestParam(required = true,defaultValue ="",name="username")String username,
-                      @RequestParam(required = true,defaultValue = "",name = "password")String password){
+    @Autowired
+    BCryptPasswordEncoder bCryptPasswordEncoder;
+    @PostMapping("/login")
+    public UserModel login(@RequestParam(required = true,defaultValue ="",name="username")String username,
+                           @RequestParam(required = true,defaultValue = "",name = "password")String password){
         return null;
     }
-    @GetMapping("/signup")
-    @Transactional(rollbackFor = Exception.class)
-    public User signup(User user)
+    @PostMapping("/signup")
+    public UserModel signup(UserModel user)
     {
-        //user.setPassword(bcryptPasswordEncoder);
-        return userRepository.save(new User(user.getUsername(),user.getPassword(),user.getEmail()));
+        System.err.println("you're siging up ! ....");
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        return userRepository.save(new UserModel(user.getUsername(),user.getPassword(),user.getEmail()));
     }
 }

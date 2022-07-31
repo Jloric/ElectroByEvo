@@ -1,19 +1,21 @@
 package RestAPI.DO;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class User {
-    @Id
+public class UserModel {
+    @Id @GeneratedValue
+    private Long id;
     private String username;
     private String password;
     private String email;
 
-    public User() {
+    public UserModel() {
     }
 
-    public User(String username, String password, String email) {
+    public UserModel(String username, String password, String email) {
         this.username = username;
         this.password = password;
         this.email = email;
