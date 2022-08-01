@@ -7,7 +7,6 @@ import ListProduitsAdmin from './admin/ListProduitsAdmin';
 import FormAdd from './admin/FormAdd';
 import FormEdit from './admin/FormEdit';
 import Login from './admin/Login';
-import Logout from './admin/Logout';
 import NavbarAdmin from './admin/NavbarAdmin';
 import Footer from './Footer';
 
@@ -22,7 +21,7 @@ function App(){
     <div div className="container border p-3 my-5 "style={{"background-color":" rgba(112, 210, 255,0.2)"}}>
 
       <Routes>
-        <Route path="/home"  exact element={<Listproduits/>}/>
+        <Route path={"/"}  exact element={<Listproduits/>}/>
         <Route path="/produit/:idProduit" exact element={<GetProduitById />} />
         <Route path="/admin/produits" exact element={<ListProduitsAdmin/>}/>
         <Route path="/admin/produits/add" element={<FormAdd/>}/>

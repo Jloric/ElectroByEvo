@@ -28,7 +28,15 @@ const ListProduitsAdmin = () =>{
     , [state.search, state.trie])
 
     const deleteProduit= (id) => {
-            fetch(url+"/admin/produits/" + id , {method : 'DELETE'})
+        let option ={
+            method : 'DELETE',
+            headers : 
+            {
+                "Authorization":"Bearer "+sessionStorage.getItem("token"),
+                "content-type" : "application/json"
+            }
+                                    }
+            fetch(url+"/produits/" + id , option)
 
                     .then(data => setState({...state , produits : state.produits.filter(b => b.id !== id)}));
         }

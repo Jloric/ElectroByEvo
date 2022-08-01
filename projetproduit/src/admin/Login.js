@@ -4,15 +4,17 @@ const Login =  () => {
     const [user , setUser] = useState({})
     function connecter()
     {
+        //console.log(user)
         let option ={
-                           method : 'POST',
-                                                    headers : {
-                                                        "content-type" : "application/json"
-                                                    },
-                                                    body : JSON.stringify(user)
+                        method : 'POST',
+                        headers : {
+                            "content-type" : "application/json"
+                        },
+                        body : JSON.stringify({username:"admin",password:"adminfirst"})
                                                 }
         fetch("http://localhost:8080/api/auth/login", option )
-        .then(token =>{ sessionStorage.setItem("token", token); console.log(token.headers.get("token"))})
+        .then(res =>res.json())
+        .then(data => sessionStorage.setItem("token",data))
 
        window.location.reload();
 
@@ -28,7 +30,7 @@ const Login =  () => {
             <form>
                 <div className="form-group">
                     <label htmlFor="login" className="form-label">Login</label>
-                    <input id="login" name="username" className="form-control" onChange={(e) => changeHandler(e)}placeholder="Saisir votre login"/>
+                    <input id="username" name="username" className="form-control" onChange={(e) => changeHandler(e)}placeholder="Saisir votre login"/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="password" className="form-label">Mot de passe</label>

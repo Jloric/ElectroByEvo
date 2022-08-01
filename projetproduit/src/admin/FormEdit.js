@@ -23,7 +23,8 @@ const FormEdit = () =>{
 
 
     useEffect(
-               ()=>{fetch(host + "/produits/"+id)
+               ()=>{
+                fetch(host + "/produits/"+id)
                                     .then(response => response.json())
                                     .then(produit => {
                                             console.log(produit);
@@ -41,11 +42,12 @@ const FormEdit = () =>{
                     let option = {
                                     method : 'PUT',
                                     headers : {
+                                        "Authorization":"Bearer "+sessionStorage.getItem("token"),
                                         "content-type" : "application/json"
                                     },
                                     body : JSON.stringify(produit)
                                 }
-                                fetch(host + "/admin/produits" , option)
+                                fetch(host + "/produits" , option)
 
                                 .then(data => {
                                     console.log(data);
@@ -94,7 +96,7 @@ const FormEdit = () =>{
                             <div className="row mt-5">
                                 <div className="col-md-3">
 
-                                    <select class="form-select" name="note" onChange={(event) => ChangeHandle(event)} value={produit.note}>
+                                    <select className="form-select" name="note" onChange={(event) => ChangeHandle(event)} value={produit.note}>
                                       <option value="" selected>Classe énergétique</option>
                                       <option value="A">A</option>
                                       <option value="B">B</option>
@@ -108,7 +110,7 @@ const FormEdit = () =>{
                                 <input type="hidden" name="id" value={produit.id} onChange={(event) => ChangeHandle(event)}/>
                                 <div className=" offset-md-2 col-md-3">
                             
-                                    <img src={produit.image} class="float-start img-thumbnail" alt="preview de l'image du produit" style={{"width" : "200px", "height" : "auto"}}/>
+                                    <img src={produit.image} className="float-start img-thumbnail" alt="preview de l'image du produit" style={{"width" : "200px", "height" : "auto"}}/>
                                 </div>
                                 <div className="offset-md-2 col-md-2">
                                     <button className="btn btn-success" onClick={() => editProduit()} type="button">Editer</button>

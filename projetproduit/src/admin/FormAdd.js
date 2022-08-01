@@ -4,7 +4,7 @@ import { useNavigate} from 'react-router-dom';
 
 const FormAdd = () =>{
 
-    let host = "http://localhost:8080/api/admin/produits";
+    let host = "http://localhost:8080/api/produits";
 
     const navigate = useNavigate();
 
@@ -24,6 +24,7 @@ const FormAdd = () =>{
                 let option = {
                                 method : 'POST',
                                 headers : {
+                                    "Authorization":"Bearer "+sessionStorage.getItem("token"),
                                     "content-type" : "application/json"
                                 },
                                 body : JSON.stringify(produit)
@@ -78,7 +79,7 @@ const FormAdd = () =>{
                 <div className="row mt-5">
                     <div className="col-md-3 mb-5">
 
-                        <select class="form-select" name="note" onChange={(event) => ChangeHandle(event)} value={produit.note}>
+                        <select className="form-select" name="note" onChange={(event) => ChangeHandle(event)} value={produit.note}>
                           <option value="" selected>Classe énergétique</option>
                           <option value="A">A</option>
                           <option value="B">B</option>
@@ -92,7 +93,7 @@ const FormAdd = () =>{
                    
                         <div className=" offset-md-2 col-md-3">
                             
-                            <img src={produit.image} class="float-start img-thumbnail" alt="preview de l'image du produit" style={{"width" : "200px", "height" : "auto"}}/>
+                            <img src={produit.image} className="float-start img-thumbnail" alt="preview de l'image du produit" style={{"width" : "200px", "height" : "auto"}}/>
                         </div>
                     
                     <div className="col-2 offset-md-2">
