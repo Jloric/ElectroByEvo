@@ -19,7 +19,7 @@ function App() {
         <Route path="/admin/produits/add" element = {<FormAdd />}/>
         <Route path="/admin/produits/edit/:id" element = {<FormEdit />}/>
         <Route path="/login" exact element={<Login />}/>
-        <Route path="/logout" element={<Logout />}/>
+
       </Routes>
 
     </div>
