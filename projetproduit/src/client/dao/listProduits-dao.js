@@ -24,9 +24,10 @@ const Listproduits = ()=>{
      return (
         <>
             <h1>Liste des produits</h1>
-            <div className="row">
+            <br/>
+            <div className="row d-flex justify-content-around ">
             {produits.map((produit) =>{return (
-                                                <div className="card col-3 d-flex " style={{"padding": "20px","margin": "20px"}} key={produit.id}>
+                                                <div className="card col-lg-3 col- md-4 col-sm-5 col-xs-5 p-2 m-4" key={produit.id}>
                                                     <img style={{"objectFit": "contain"}} src={produit.image} alt="description"  />                                                    
                                                     <div className="align-items-end flex-column mt-auto p-2" >
                                                         {/*emplacement des information*/} 
