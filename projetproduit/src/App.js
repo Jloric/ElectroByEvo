@@ -3,7 +3,7 @@ import {Routes, Route, Navigate} from 'react-router-dom';
 import Listproduits from './client/dao/listProduits-dao';
 import GetProduitById from './client/dao/produit-dao';
 import NavbarClient from './client/nav/navBar';
-import Footer from './client/nav/footer';
+import Footer from './footer';
 
 function App() {
   return (

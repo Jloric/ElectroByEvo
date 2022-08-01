@@ -20,7 +20,6 @@ const Listproduits = ()=>{
     useEffect(
         ()=>{loadData().then(produits => setProduits(produits)) }
      , [])
-
      return (
         <>
             <h1>Liste des produits</h1>
@@ -44,13 +43,7 @@ const Listproduits = ()=>{
                                             )
                                         }
                                     )}
-                                                   
-                
             </div>
-
-
-
-
         </>
     )
 }
