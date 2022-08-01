@@ -4,9 +4,12 @@ import {Link, useNavigate} from 'react-router-dom';
 const Logout = () => {
 const navigate = useNavigate();
 function deconnection(){
-    fetch("http://localhost:8080/admin/logout" )
+    /*fetch("http://localhost:8080/admin/logout" )
         .then(response => navigate("/home"))
-        .catch(e => navigate("/home"))
+        .catch(e => navigate("/home"))*/
+    sessionStorage.removeItem("token");
+
+    navigate("/home");
 }
 
 

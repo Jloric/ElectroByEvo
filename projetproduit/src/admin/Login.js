@@ -1,6 +1,13 @@
 import React from 'react';
-
+import {useNavigate} from 'react-router-dom';
 const Login =  () => {
+    const navigate = useNavigate();
+    function connecter()
+    {
+        sessionStorage.setItem("token","15645eaze45");
+
+        navigate("/home");
+    }
     return (
         <div className="offset-md-4 col-md-4 text-center mt-5">
             <form>
@@ -12,7 +19,7 @@ const Login =  () => {
                     <label htmlFor="password" className="form-label">Mot de passe</label>
                     <input id="password" name="password" className="form-control" placeholder="Saisir votre mot de passe"/>
                 </div>
-                <button className="btn btn-primary" type="button">Login</button>
+                <button className="btn btn-primary" onClick={() => connecter()} type="button">Login</button>
             </form>
         </div>
     )

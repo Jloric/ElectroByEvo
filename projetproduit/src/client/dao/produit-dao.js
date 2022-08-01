@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {useParams} from 'react-router-dom';
 //import {Link} from "react-router-dom";
-const apiURL ="http://localhost:8082/api/produits/";
+const apiURL ="http://localhost:8080/api/produits/";
 
 
 

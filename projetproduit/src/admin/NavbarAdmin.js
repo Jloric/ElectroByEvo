@@ -8,7 +8,7 @@ const NavbarAdmin = ()=>{
 
         <nav className="navbar navbar-expand-lg bg-light">
           <div className="container-fluid">
-            <a className='navbar-brand' href='#'>
+            <a className='navbar-brand bg-info p-2' href='#' >
                         <img style={{"height" : "50px", "width" : "auto"}} src={require('../images/electrobyevologo.jpg')} alt='logo ElectroByEvo'></img>
                        <label style={{"font-family": "cursive","color":"#0057A5" }}>ElectroByEvo</label>
                        </a>

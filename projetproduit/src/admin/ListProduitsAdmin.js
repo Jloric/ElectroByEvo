@@ -1,6 +1,6 @@
 import React, {useState , useEffect } from 'react'
 import {Link, useNavigate} from 'react-router-dom';
-const ListProduits = () =>{
+const ListProduitsAdmin = () =>{
 
     const [state, setState] = useState({
     produits : [],
@@ -88,4 +88,4 @@ const ListProduits = () =>{
     )
 }
 
-export default ListProduits;
+export default ListProduitsAdmin;
