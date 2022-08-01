@@ -9,7 +9,7 @@ function deconnection(){
         .catch(e => navigate("/home"))*/
     sessionStorage.removeItem("token");
 
-    navigate("/home");
+    window.location.reload();
 }
 
 

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Link} from 'react-router-dom';
 const Footer = () =>
 {
     return (
@@ -55,6 +55,7 @@ const Footer = () =>
                   </p>
                   <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
                   <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+                  <p><Link className="btn" to="/login">Administration</Link></p>
                 </div>
 
               </div>

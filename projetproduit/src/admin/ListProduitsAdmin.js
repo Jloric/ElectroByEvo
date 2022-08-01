@@ -33,6 +33,8 @@ const ListProduitsAdmin = () =>{
                     .then(data => setState({...state , produits : state.produits.filter(b => b.id !== id)}));
         }
 
+
+
     function ChangeSearch({target})
     {
         setState({...state, search : target.value});
