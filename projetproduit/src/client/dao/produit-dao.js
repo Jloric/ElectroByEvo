@@ -44,12 +44,12 @@ const GetProduitById =()=>{
     <> 
     
         <div >
-            <div className="mb-3">
+            <div className="mb-3 ">
             <h1 className="mt-3 mb-3 pt-3 pb-3">{produit.nom}</h1>
             <div className="container">
                 <div className="box">
                     <div className="row">
-                        <div className="col-6">
+                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                         {/*emplacement des information*/} 
                             <ul  >
                                 <li className="mt-3 mb-3 pt-3 pb-3">Classe energetique : {produit.note}</li>
@@ -58,15 +58,18 @@ const GetProduitById =()=>{
                                 <li className="mt-3 mb-1 pt-3 pb-1">{produit.description}</li>
                             </ul>
                            
-                             <a href="#"><i style={{"height": "50px","width":"auto"}} className="fas fa-shopping-cart fa-5x  m-5"></i></a>
-                             <a  className="btn btn-primary  m-5" aria-current="page" href="/home">Retour à la liste des produits</a>
-                        </div>
-                        <div className="col-6">
+                               </div>
+                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                         {/*emplacement de l'image*/}
                         <p><img src={produit.image} alt={"image produit:\n"+produit.nom} width="500" height="auto" /></p> 
                          
                         </div>
-                       
+                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <a href="#"><i style={{"height": "50px","width":"auto"}} className="fas fa-shopping-cart fa-5x  m-5"></i></a>
+                            <a  className="btn btn-primary  m-5" aria-current="page" href="/home">Retour à la liste des produits</a>
+                        </div>
+                        <div className="col-lg-6 col-md-6 col-sm-6 col-xs-6"></div>
+
                     </div>
                 </div>
             </div>
