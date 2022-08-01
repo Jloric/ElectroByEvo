@@ -3,6 +3,7 @@ package RestAPI.Controller;
 import RestAPI.DAO.ProduitRepository;
 import RestAPI.Entities.Produit;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,9 +14,39 @@ public class ProduitController {
     @Autowired
     ProduitRepository produitRepository;
     @GetMapping("/produits")
-    public List<Produit> getAll(){
-        System.err.println("Voici la liste des produits");
-      return  produitRepository.findAll();
+    public List<Produit> getAll(
+            @RequestParam(required = false,name ="search") String search,
+            @RequestParam(required = false,name="sort") String sort)
+    {
+        if(search==null && sort==null) {
+            System.err.println("Voici la liste des produits");
+            return produitRepository.findAll();
+        }else{
+        }
+        System.out.print(sort);
+        System.out.print(search);
+        if(sort == null){
+            System.err.println("Voici la liste des produits");
+            System.err.println("keyword:"+search);
+            System.err.println("keyword:" + search);
+            return produitRepository.searchProduit(search);
+        }
+        if(search == null){
+            System.err.println("Voici la liste des produits trié");
+            System.err.println("Sort:" + sort);
+            return produitRepository.findAll(Sort.by(Sort.Direction.ASC,sort));
+        }
+        else{
+            System.err.println("keyword:" + search+"Sort:"+sort);
+            if(sort.equals("note")) {
+                System.err.println("Voici la liste des produits triés par notes et qui correspondent a la recherche");
+
+                return produitRepository.searchProduitSortedByNote(search);
+            }else{
+                System.err.println("Voici la liste des produits triés par prix et qui correspondent a la recherche");
+                return produitRepository.searchProduitSortedByPrix(search);
+            }
+        }
     }
     @GetMapping("/produits/{id}")
     public Produit getById(@PathVariable long id){
