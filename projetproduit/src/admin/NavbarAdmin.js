@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-
+import Logout from './Logout';
 const NavbarAdmin = ()=>{
 
 
@@ -30,7 +30,7 @@ const NavbarAdmin = ()=>{
 
               </ul>
               <div className="d-flex" >
-                <Link className="nav-link btn btn-danger p-2"  to="/logout">Se déconnecter</Link>
+                <Logout/>
               </div>
             </div>
           </div>
