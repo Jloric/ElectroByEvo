@@ -1,11 +1,11 @@
-package RestAPI.DO;
+package RestAPI.Entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity(name = "Produit")
-public class ProduitDO {
+public class Produit {
     @Id @GeneratedValue
     private Long Id;
 
@@ -18,10 +18,10 @@ public class ProduitDO {
 
     private ClasseEnergetique note;
 
-    public ProduitDO() {
+    public Produit() {
     }
 
-    public ProduitDO(String reference, String nom, String description, double prix,ClasseEnergetique note ,String image) {
+    public Produit(String reference, String nom, String description, double prix, ClasseEnergetique note , String image) {
         this.reference = reference;
         this.nom = nom;
         this.description = description;

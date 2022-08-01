@@ -1,8 +1,8 @@
 package RestAPI.DAO;
 
-import RestAPI.DO.ProduitDO;
+import RestAPI.Entities.Produit;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ProduitRepository extends JpaRepository<ProduitDO,Long> {
+public interface ProduitRepository extends JpaRepository<Produit,Long> {
 
 }
