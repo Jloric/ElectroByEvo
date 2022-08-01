@@ -1,18 +1,26 @@
 import React from 'react';
 import {Routes, Route, Navigate} from 'react-router-dom';
-import Test from './Test';
+import Listproduits from './client/dao/listProduits-dao';
+import GetProduitById from './client/dao/produit-dao';
+import NavbarClient from './client/nav/navBar';
+
 function App() {
   return (
+    <>
+
+    <NavbarClient/>
+
     <div className="container">
+
       <Routes>
-        <Route path="/"  exact element={<Navigate to="/books" replace/>}/>
-        <Route path="/books" exact element={<Test />} />
-        <Route path="/books/add" element = {<Test />}/>
-        <Route path="/books/edit/:id" element = {<Test />}/>
+        <Route path="/home"  exact element={<Listproduits/>}/>
+        <Route path="/product/:idProduit" exact element={<GetProduitById />} />
+        {/* <Route path="/login" exact element={<Login />}/> */}
       </Routes>
 
     </div>
-   
+
+   </>
   );
 }
 
