@@ -14,7 +14,7 @@ const Login =  () => {
         fetch("http://localhost:8080/api/auth/login", option )
         .then(token =>{ sessionStorage.setItem("token", token); console.log(token.headers.get("token"))})
 
-       // window.location.reload();
+       window.location.reload();
 
     }
 
